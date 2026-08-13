@@ -1,0 +1,435 @@
+/* ==========================================================================
+   TOKENS
+   ========================================================================== */
+
+:root {
+  --ink:        #202A20;   /* deep pine-ink, used for nav/header/footer */
+  --paper:      #EFE8D6;   /* aged manila paper, main background */
+  --paper-dark: #E3DAC2;   /* slightly deeper paper, for table stripes */
+  --moss:       #4B5842;   /* moss green, secondary accent */
+  --rust:       #B5502C;   /* stamp red-orange, signature accent */
+  --brass:      #A98A4E;   /* brass, rules & borders */
+  --text:       #262420;   /* body text */
+  --text-soft:  #5B564A;   /* muted text */
+
+  --font-display: 'Special Elite', 'Courier New', monospace;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ==========================================================================
+   RESET / BASE
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  background-image:
+    repeating-linear-gradient(
+      transparent, transparent 27px, rgba(75, 88, 66, 0.06) 28px
+    );
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-top: 64px; /* clears the fixed navbar */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.clear {
+  clear: both;
+}
+
+/* Focus visibility for keyboard users */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   NAVBAR — fixed, float-based (no flexbox / grid)
+   ========================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: var(--ink);
+  border-bottom: 3px double var(--brass);
+  padding: 0 28px;
+  z-index: 100;
+}
+
+.navbar .brand {
+  float: left;
+  line-height: 61px;
+  font-family: var(--font-display);
+  color: var(--paper);
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.navbar .brand span {
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-left: 6px;
+}
+
+.nav-list {
+  float: right;
+  list-style: none;
+}
+
+.nav-list li {
+  float: left;
+  margin-left: 6px;
+}
+
+.nav-list li a {
+  display: block;
+  line-height: 64px;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--paper);
+  border-bottom: 3px solid transparent;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus-visible {
+  color: var(--brass);
+  border-bottom-color: var(--rust);
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: 64px 28px 56px;
+  text-align: center;
+  border-bottom: 6px solid var(--rust);
+}
+
+.site-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--brass);
+  margin-bottom: 18px;
+}
+
+.site-header h1 {
+  font-size: 52px;
+  letter-spacing: 0.03em;
+}
+
+.site-header .tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--paper-dark);
+  margin-top: 10px;
+}
+
+.site-header .stamp-date {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  background-color: var(--brass);
+  padding: 5px 14px;
+  transform: rotate(-1.5deg);
+}
+
+/* ==========================================================================
+   MAIN / SPECIMEN SECTIONS
+   ========================================================================== */
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.specimen {
+  padding: 52px 0 44px;
+  border-bottom: 1px dashed var(--brass);
+}
+
+.specimen:last-child {
+  border-bottom: none;
+}
+
+.specimen-label {
+  margin-bottom: 26px;
+}
+
+.specimen-no {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 4px;
+}
+
+.specimen-label h2 {
+  font-size: 28px;
+  color: var(--ink);
+}
+
+.specimen-body p {
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.specimen-body p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ---- About: floated polaroid portrait ---- */
+
+.portrait {
+  float: left;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  margin: 4px 28px 14px 0;
+  padding: 10px 10px 26px;
+  background-color: #fff;
+  border: 1px solid #d8d2bd;
+  box-shadow: 0 10px 22px rgba(32, 42, 32, 0.28);
+  transform: rotate(-2.5deg);
+}
+
+.fact-table {
+  clear: left;
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.fact-row {
+  border-top: 1px dotted var(--brass);
+  padding: 8px 12px;
+  overflow: hidden; /* clearfix: contains the floated .fact-key */
+}
+
+.fact-row:last-child {
+  border-bottom: 1px dotted var(--brass);
+}
+
+.fact-key {
+  float: left;
+  width: 120px;
+  color: var(--moss);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fact-val {
+  margin-left: 120px;
+}
+
+/* ---- Education / Work: ledger rows ---- */
+
+.ledger-row {
+  margin-bottom: 30px;
+}
+
+.ledger-row:last-child {
+  margin-bottom: 0;
+}
+
+.ledger-when {
+  float: left;
+  width: 130px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rust);
+  padding-top: 4px;
+}
+
+.ledger-what {
+  margin-left: 150px;
+  border-left: 2px solid var(--brass);
+  padding-left: 20px;
+}
+
+.ledger-what h3 {
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.ledger-org {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--moss);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+/* ---- Hobbies: stamp-style tags ---- */
+
+.tag-list {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.tag-list li {
+  float: left;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  border: 1px solid var(--moss);
+  padding: 7px 14px;
+  margin: 0 10px 10px 0;
+  background-color: var(--paper-dark);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--ink);
+  color: var(--paper-dark);
+  text-align: center;
+  padding: 40px 28px 48px;
+  margin-top: 8px;
+  border-top: 6px solid var(--rust);
+}
+
+.site-footer .stamp {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brass);
+  border: 1px solid var(--brass);
+  padding: 6px 16px;
+  transform: rotate(-1.5deg);
+  margin-bottom: 14px;
+}
+
+.site-footer p:last-child {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--paper-dark);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    padding-top: 108px;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 10px 16px;
+  }
+
+  .navbar .brand {
+    float: none;
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+    padding: 4px 0;
+  }
+
+  .nav-list {
+    float: none;
+  }
+
+  .nav-list li {
+    float: left;
+    width: 25%;
+  }
+
+  .nav-list li a {
+    line-height: 1.4;
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .site-header {
+    padding: 40px 20px 40px;
+  }
+
+  .site-header h1 {
+    font-size: 36px;
+  }
+
+  .portrait {
+    float: none;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .fact-table {
+    clear: none;
+  }
+
+  .ledger-when {
+    float: none;
+    width: auto;
+    margin-bottom: 6px;
+  }
+
+  .ledger-what {
+    margin-left: 0;
+  }
+
+  .tag-list li {
+    float: none;
+    display: inline-block;
+  }
+}
