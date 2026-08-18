@@ -1,0 +1,27 @@
+section {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+}
+
+.small {
+  background-color: yellow;
+}
+
+@media screen and (min-width: 800px) {
+  .small {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .medium {
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .large {
+    background-color: blue;
+  }
+}

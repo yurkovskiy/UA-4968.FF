@@ -1,0 +1,32 @@
+section {
+    /* width: 600px; */
+    min-height: 100px;
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-around;
+    gap: 10px;
+    color: #3b82f6;
+}
+
+div {
+    border: 2px solid #000;
+}
+
+.s2 {
+    justify-content: space-evenly;
+}
+
+.a {
+    flex-shrink: 2;
+
+}
+
+.b {
+    flex-shrink: 2;
+
+}
+
+.c {
+    flex-shrink: 2;
+}
+
