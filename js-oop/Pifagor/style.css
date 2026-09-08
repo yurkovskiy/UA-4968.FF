@@ -1,0 +1,32 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+main {
+    display: table;
+    border-collapse: collapse;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    border: 1px solid #000;
+    width: 40px;
+    text-align: center;
+}
+
+.cell-main {
+    background-color: yellow;
+}
+
+.cell-omain {
+    background-color: greenyellow;
+}
+
+.cell-umain {
+    background-color: lightsalmon;
+}

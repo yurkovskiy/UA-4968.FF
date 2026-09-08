@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222; /* Dark background */
+  color: #00ff00; /* Neon green text */
+  font-family: 'Courier New', Courier, monospace; /* Digital-looking font */
+}
+
+#clock {
+  font-size: 5rem;
+  font-weight: bold;
+}

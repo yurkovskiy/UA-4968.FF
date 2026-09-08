@@ -1,0 +1,23 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+main {
+    display: grid;
+    border: 2px solid blue;
+    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-rows: repeat(2, 1fr); */
+    gap: 10px;
+    grid-auto-rows: minmax(200px, 300px);
+}
+
+section {
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+section h2 {
+    text-align: center;
+}

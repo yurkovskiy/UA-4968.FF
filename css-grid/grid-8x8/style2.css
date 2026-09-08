@@ -1,0 +1,23 @@
+main {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+section {
+    background-color: cadetblue;
+    border: 1px solid #000;
+}
+
+section > p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+main:nth-child(2) {
+  grid-area: 2 / 4 / 4 / 6;
+
+  /* is equivalent to: */
+  /* grid-row-start: 2;
+  grid-column-start: 4;
+  grid-row-end: 4;
+  grid-column-end: 6; */
+}
